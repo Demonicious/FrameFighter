@@ -11,8 +11,6 @@ func _ready() -> void:
 		"m_forward"
 	)
 	
-	finput.set_socd_mode("neutral") # neutral, former, latter
-	
 	finput.bind_action("lp", "a_lp")
 	finput.bind_action("mp", "a_mp")
 	finput.bind_action("hp", "a_hp")
@@ -30,11 +28,9 @@ func _ready() -> void:
 	
 	finput.bind_composite_action("throw", [ "lp", "lk" ])
 
-	print(finput.get_input_map())
-
 	finput.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
-	print(finput.get_input_history())
+	print(finput.get_pressed_actions())
 	pass

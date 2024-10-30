@@ -11,10 +11,10 @@ var _actions: Dictionary = {} # A list of all registered actions
 var _charge: Dictionary = {}  # To keep track of directional charge
 var _history: Array[Dictionary] = []      # Input history alongside frames an action was held for
 
+var _history_size = 15
 var _socd_mode = "neutral"
 
 func _physics_process(delta: float) -> void:
-	
 	if _active:
 		_intercept_input()
 		_update_history()
@@ -50,17 +50,17 @@ func _update_history() -> void:
 				"actions": get_pressed_actions()
 			})
 			
-			_history.resize(25)
+			_history.resize(_history_size)
 
 	if _history.size():
 		_history[0]["frames"] += 1
 		_history[0]["frames"] = clamp(_history[0]["frames"], 0, 99)
 
 # Function to get the pressed actions from other scripts. Movement Actions always appear first.
-func get_pressed_actions() -> Array:
+func get_pressed_actions() -> Array[String]:
 	# Separate movement actions from other actions so that movement actions are always earlier in the returned array
-	var movement_actions = []
-	var other_actions = []
+	var movement_actions: Array[String] = []
+	var other_actions: Array[String] = []
 	
 	for action in _actions:
 		if _is_action_pressed(action):
@@ -72,7 +72,7 @@ func get_pressed_actions() -> Array:
 	return movement_actions + other_actions
 
 # Function to get the input history with frame information from other scripts
-func get_input_history() -> Array:	
+func get_input_history() -> Array[Dictionary]:
 	return _history
 
 # Utility Function to get out the entire input map
@@ -111,6 +111,9 @@ func start() -> void:
 
 func stop() -> void:
 	_active = false
+
+func set_history_size(size: int) -> void:
+	_history_size = size
 
 func set_socd_mode(mode: String) -> void:
 	_socd_mode = mode

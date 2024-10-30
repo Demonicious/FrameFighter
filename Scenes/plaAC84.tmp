@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwkph0nljprk4"]
+
+[ext_resource type="Script" path="res://Scenes/control.gd" id="1_u2opd"]
+[ext_resource type="Script" path="res://addons/FrameFighter/Nodes/FighterInput.gd" id="2_i61b6"]
+
+[node name="Playground" type="Node2D"]
+script = ExtResource("1_u2opd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ControlsVisualizer" type="CanvasLayer" parent="."]
+
+[node name="FighterInput" type="Node" parent="."]
+script = ExtResource("2_i61b6")
