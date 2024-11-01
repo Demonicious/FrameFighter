@@ -1,18 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwkph0nljprk4"]
+[gd_scene load_steps=4 format=3 uid="uid://dwkph0nljprk4"]
 
 [ext_resource type="Script" path="res://Scenes/control.gd" id="1_u2opd"]
 [ext_resource type="Script" path="res://addons/FrameFighter/Nodes/FighterInput.gd" id="2_i61b6"]
+[ext_resource type="PackedScene" uid="uid://dtrgsvbhcb43" path="res://addons/FrameFighter/Scenes/InputVisualizer.tscn" id="3_wle8w"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_u2opd")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ControlsVisualizer" type="CanvasLayer" parent="."]
-
 [node name="FighterInput" type="Node" parent="."]
 script = ExtResource("2_i61b6")
+
+[node name="InputVisualizer" parent="." node_paths=PackedStringArray("fighter_input") instance=ExtResource("3_wle8w")]
+fighter_input = NodePath("../FighterInput")

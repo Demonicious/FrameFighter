@@ -1,0 +1,257 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtrgsvbhcb43"]
+
+[ext_resource type="Texture2D" uid="uid://c3kpmnr34mmqk" path="res://addons/FrameFighter/Assets/Inputs/Gates.png" id="1_fcwr8"]
+[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/input_visualizer.gd" id="1_yowtq"]
+[ext_resource type="Texture2D" uid="uid://dl5h4nll1yceg" path="res://addons/FrameFighter/Assets/Inputs/Handle.png" id="2_nvjat"]
+[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/trails.gd" id="4_cqbc5"]
+[ext_resource type="PackedScene" uid="uid://cdn6ye2sc1j85" path="res://addons/FrameFighter/Scenes/Button.tscn" id="5_nqthi"]
+[ext_resource type="Texture2D" uid="uid://48r8a6r04q16" path="res://addons/FrameFighter/Assets/Inputs/Button.png" id="6_xbuar"]
+[ext_resource type="Texture2D" uid="uid://bd8spki0tpgdi" path="res://addons/FrameFighter/Assets/Inputs/ButtonPressed.png" id="7_xp577"]
+
+[sub_resource type="Curve" id="Curve_0et76"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="InputVisualizer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yowtq")
+
+[node name="Gates" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_fcwr8")
+
+[node name="Handle" type="TextureRect" parent="Gates"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nvjat")
+
+[node name="Center" type="Node2D" parent="Gates/Handle"]
+show_behind_parent = true
+position = Vector2(20, 21.5)
+
+[node name="Trails" type="Line2D" parent="Gates/Handle/Center"]
+show_behind_parent = true
+z_index = 1
+width_curve = SubResource("Curve_0et76")
+default_color = Color(0.999985, 0.857712, 0.837757, 0.580392)
+script = ExtResource("4_cqbc5")
+length = 5
+
+[node name="DownBack" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 56.5
+offset_right = -55.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DownForward" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = 57.5
+offset_right = 96.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Down" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 85.5
+offset_right = 20.0
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Forward" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = -19.5
+offset_right = 126.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpForward" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -96.5
+offset_right = 96.0
+offset_bottom = -56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Up" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -126.5
+offset_right = 20.0
+offset_bottom = -86.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpBack" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -94.5
+offset_right = -54.0
+offset_bottom = -54.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Control" parent="Gates"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -22.5
+offset_right = -86.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actions" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 424.0
+offset_bottom = 168.0
+
+[node name="HK" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -30.0
+offset_top = -16.0
+offset_right = -70.0
+offset_bottom = -56.0
+text = "HK"
+textColor = Color(1, 0.124904, 0.3326, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="MK" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -79.0
+offset_top = -16.0
+offset_right = -119.0
+offset_bottom = -56.0
+text = "MK"
+textColor = Color(0.775345, 0.47335, 7.70092e-07, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="LK" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -128.0
+offset_top = -16.0
+offset_right = -168.0
+offset_bottom = -56.0
+text = "LK"
+textColor = Color(0.313726, 0.521569, 1, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="HP" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -30.0
+offset_top = -64.0
+offset_right = -70.0
+offset_bottom = -104.0
+text = "HP"
+textColor = Color(1, 0.124904, 0.3326, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="MP" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -79.0
+offset_top = -64.0
+offset_right = -119.0
+offset_bottom = -104.0
+text = "MP"
+textColor = Color(0.775345, 0.47335, 7.70092e-07, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="LP" parent="Actions" instance=ExtResource("5_nqthi")]
+layout_mode = 1
+offset_left = -128.0
+offset_top = -64.0
+offset_right = -168.0
+offset_bottom = -104.0
+textColor = Color(0.313726, 0.521569, 1, 1)
+released_texture = ExtResource("6_xbuar")
+pressed_texture = ExtResource("7_xp577")
+
+[node name="History" type="Label" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 1152.0
+offset_bottom = 640.0
+text = "History
+"
+
+[node name="Charge" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 256.0
+offset_right = 196.0
+offset_bottom = 384.0
+text = "Charge"

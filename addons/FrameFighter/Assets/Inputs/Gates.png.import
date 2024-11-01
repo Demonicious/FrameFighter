@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnqudpmqvmwob"
-path="res://.godot/imported/Directional.png-c7da268dd66af5efda767c1f8cefd230.ctex"
+uid="uid://c3kpmnr34mmqk"
+path="res://.godot/imported/Gates.png-81163e69686978ff6780df6047fb92df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/FrameFighter/Assets/Inputs/Directional.png"
-dest_files=["res://.godot/imported/Directional.png-c7da268dd66af5efda767c1f8cefd230.ctex"]
+source_file="res://addons/FrameFighter/Assets/Inputs/Gates.png"
+dest_files=["res://.godot/imported/Gates.png-81163e69686978ff6780df6047fb92df.ctex"]
 
 [params]
 
