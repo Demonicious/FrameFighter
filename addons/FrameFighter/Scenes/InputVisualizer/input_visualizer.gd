@@ -40,7 +40,7 @@ func _history() -> void:
 	 
 	for change in input_history:
 		if change.size():
-			text += str(change["frames"]) + ": " + change["actions"]["movement"] + ", " + "+".join(change["actions"]["composite"]) + ", " + "+".join(change["actions"]["main"]) + "\n"
+			text += str(change["frames"]) + ": " + change["actions"]["movement"] + ", " + "+".join(change["actions"]["composite"]) + ", " + "+".join(change["actions"]["basic"]) + "\n"
 	
 	history.text = text
 
@@ -62,7 +62,7 @@ func _movement() -> void:
 		create_tween().tween_property(handle, "position", directions["neutral"], 0.02)
 
 func _actions() -> void:
-	var actions = fighter_input.get_main_actions()
+	var actions = fighter_input.get_basic_actions()
 	
 	LP.release()
 	MP.release()

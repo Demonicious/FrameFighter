@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="FighterInputMap" load_steps=2 format=3 uid="uid://d1us7k4tx1713"]
+
+[ext_resource type="Script" path="res://addons/FrameFighter/Resources/FighterInputMap.gd" id="1_nbd8s"]
+
+[resource]
+script = ExtResource("1_nbd8s")

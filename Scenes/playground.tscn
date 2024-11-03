@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/control.gd" id="1_u2opd"]
 [ext_resource type="Script" path="res://addons/FrameFighter/Nodes/FighterInput.gd" id="2_i61b6"]
-[ext_resource type="PackedScene" uid="uid://dtrgsvbhcb43" path="res://addons/FrameFighter/Scenes/InputVisualizer.tscn" id="3_wle8w"]
+[ext_resource type="PackedScene" uid="uid://dtrgsvbhcb43" path="res://addons/FrameFighter/Scenes/InputVisualizer/InputVisualizer.tscn" id="3_wle8w"]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource("1_u2opd")

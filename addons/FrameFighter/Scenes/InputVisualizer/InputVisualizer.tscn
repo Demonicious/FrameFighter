@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtrgsvbhcb43"]
 
 [ext_resource type="Texture2D" uid="uid://c3kpmnr34mmqk" path="res://addons/FrameFighter/Assets/Inputs/Gates.png" id="1_fcwr8"]
-[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/input_visualizer.gd" id="1_yowtq"]
+[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/InputVisualizer/input_visualizer.gd" id="1_yowtq"]
 [ext_resource type="Texture2D" uid="uid://dl5h4nll1yceg" path="res://addons/FrameFighter/Assets/Inputs/Handle.png" id="2_nvjat"]
-[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/trails.gd" id="4_cqbc5"]
-[ext_resource type="PackedScene" uid="uid://cdn6ye2sc1j85" path="res://addons/FrameFighter/Scenes/Button.tscn" id="5_nqthi"]
+[ext_resource type="Script" path="res://addons/FrameFighter/Scenes/InputVisualizer/trails.gd" id="4_cqbc5"]
+[ext_resource type="PackedScene" uid="uid://cdn6ye2sc1j85" path="res://addons/FrameFighter/Scenes/InputVisualizer/Button.tscn" id="5_nqthi"]
 [ext_resource type="Texture2D" uid="uid://48r8a6r04q16" path="res://addons/FrameFighter/Assets/Inputs/Button.png" id="6_xbuar"]
 [ext_resource type="Texture2D" uid="uid://bd8spki0tpgdi" path="res://addons/FrameFighter/Assets/Inputs/ButtonPressed.png" id="7_xp577"]
 
