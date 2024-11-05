@@ -36,7 +36,7 @@ func _physics_process(_delta: float) -> void:
 
 func _history() -> void:
 	var text = ""
-	var input_history = fighter_input.get_input_history()
+	var input_history = fighter_input.history.all()
 	 
 	for change in input_history:
 		if change.size():
@@ -46,7 +46,7 @@ func _history() -> void:
 
 func _charge() -> void:
 	var text = ""
-	var actions = fighter_input.get_charge()
+	var actions = fighter_input.actions.charged_actions()
 	
 	for action in actions:
 		text += action + ": " + str(actions[action]) + "\n"
@@ -54,7 +54,7 @@ func _charge() -> void:
 	charge.text = text
 
 func _movement() -> void:
-	var movement_direction = fighter_input.get_movement()
+	var movement_direction = fighter_input.actions.movement_direction()
 	
 	if movement_direction != "neutral":
 		create_tween().tween_property(handle, "position", directions[movement_direction].position, 0.02)
@@ -62,7 +62,7 @@ func _movement() -> void:
 		create_tween().tween_property(handle, "position", directions["neutral"], 0.02)
 
 func _actions() -> void:
-	var actions = fighter_input.get_basic_actions()
+	var actions = fighter_input.actions.basic_actions()
 	
 	LP.release()
 	MP.release()
