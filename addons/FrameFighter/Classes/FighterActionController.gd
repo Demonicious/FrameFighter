@@ -4,6 +4,8 @@ class_name FighterActionController
 var _actions: Dictionary = {}
 var _charge: Dictionary = {}
 
+var should_charge: bool = true
+
 var _side: FrameFighter.SIDE = FrameFighter.SIDE.PLAYER_ONE
 
 var _back_input: String
@@ -60,8 +62,6 @@ func handle_side_switch(side: FrameFighter.SIDE) -> void:
 	else:
 		_actions["back"].input_map_action = _back_input
 		_actions["forward"].input_map_action = _forward_input
-
-# Charge Handling Methods
 
 # Private method to ensure the action key exists in the charge dictionary.
 func _create_charge_key(action: String) -> void:
@@ -190,7 +190,7 @@ func _handle_composite_action(action: String) -> void:
 		release(action)
 
 func _handle_charge_action(action: String) -> void:
-	if is_pressed(action):
+	if is_pressed(action) and should_charge:
 		increment_charge(action)
 	else:
 		if get_charge_type(action) == FrameFighter.CHARGE.IMMEDIATE:

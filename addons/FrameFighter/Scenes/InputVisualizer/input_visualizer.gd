@@ -36,7 +36,7 @@ func _physics_process(_delta: float) -> void:
 
 func _history() -> void:
 	var text = ""
-	var input_history = fighter_input.history.all()
+	var input_history = fighter_input.get_history()
 	 
 	for change in input_history:
 		if change.size():
